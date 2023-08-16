@@ -40,25 +40,25 @@ namespace Product_Integration.Controllers
             return _product.GetProducts();
         }
 
-        [HttpGet("getproductbyid")]
+        [HttpGet("getproductbyid/{id}")]
         public Task<Product> GetProductById([FromRoute]string id)
         {
             return _product.GetProductById(id);
         }
 
-        [HttpGet("addproduct")]
+        [HttpPost("addproduct")]
         public Task AddProduct([FromBody] Product product)
         {
             return _product.AddProduct(product);
         }
 
-        [HttpGet("updateproduct")]
+        [HttpPut("updateproduct")]
         public Task UpdateProduct([FromBody] Product product)
         {
             return _product.UpdateProduct(product);
         }
 
-        [HttpGet("deleteproduct")]
+        [HttpDelete("deleteproduct")]
         public Task DeleteProduct([FromRoute] string id)
         {
             return _product.DeleteProduct(id);
